@@ -1,4 +1,3 @@
-README.md
 # Google Data Analytics Capstone Project: Cyclistic bike-share analysis
 
 ## Background
@@ -51,31 +50,38 @@ The dataset contains 12 monthly files, named according to the format YYYYMM-divv
 **Data Visualizations:** [Tableau](https://public.tableau.com/app/profile/rachelle.lau/viz/GoogleDataAnalyticsCapstoneProjectCyclisticbike-shareanalysis_17327728755180/Dashboard4)
 
 
-### Processing the Data from Dirty to Clean
-This project was conducted using BigQuery
+## Processing the Data from Dirty to Clean
+This project was conducted using BigQuery.
 
 **Data Exploration**
+
 SQL Query: [Data Exploration](https://github.com/hcrlau/Cyclistic-Bike-Share-Analysis/blob/main/Data%20Exploration.sql)
+
 1. Check the data types
-![Image](screenshots/Datatype.png)
+
+![Datatype](https://github.com/user-attachments/assets/9c1919c6-a89c-463b-bfe9-dd12fd5677e3)
 
 2. Find the null values in each variables
-![Image](screenshots/null_values.png)
+
+![null_values](https://github.com/user-attachments/assets/b459561d-c922-4d50-aa3d-225750fb0906)
 
 3. Check for duplicate ride_id rows and found a total of 211 duplicates.
 
 4. Confirmed 3 unique rideable types.
-![Image](screenshots/rideable_type.png)
 
-5. There are 1079270 null entries in the start_station_name and start_station_id columns, and 1112056 null entries in the end_station_name and end_station_id columns. These rows should be removed to ensure data integrity.
+![rideable_type](https://github.com/user-attachments/assets/a3ef9e74-766b-4263-91ac-66db4b6e3410)
+
+5. There are 1,079,270 null entries in the start_station_name and start_station_id columns, and 1,112,056 null entries in the end_station_name and end_station_id columns. These rows should be removed to ensure data integrity.
 
 6. There are 7,417 rows with missing coordinate data in the start_lat, start_lng, end_lat, or end_lng columns. These rows should be removed.
 
 7. Confirmed 2 rider type.
-![Image](screenshots/member_casual.png)
+   
+![member_casual](https://github.com/user-attachments/assets/39ff61df-a224-4047-84de-6c4a25928d01)
 
 
 **Data Cleaning and Data Transformation**
+
 SQL Query: [Data Cleaning and Data Transformation](https://github.com/hcrlau/Cyclistic-Bike-Share-Analysis/blob/main/Data%20Cleaning%20and%20Data%20Transformation.sql)
 
 1. Removed duplicate ride_id.
@@ -90,6 +96,7 @@ SQL Query: [Data Cleaning and Data Transformation](https://github.com/hcrlau/Cyc
 
 
 **Data Analysis**
+
 SQL Query: [Data Analysis](https://github.com/hcrlau/Cyclistic-Bike-Share-Analysis/blob/main/Data%20Analysis.sql)
 
 1. Summarize bike usage patterns based on factors such as bike type and rider type (member or casual) 
@@ -103,14 +110,17 @@ SQL Query: [Data Analysis](https://github.com/hcrlau/Cyclistic-Bike-Share-Analys
 
 
 ### Answers to Business Questions Based on Visualizations
+
 Data Visualization: [Tableau](https://public.tableau.com/app/profile/rachelle.lau/viz/GoogleDataAnalyticsCapstoneProjectCyclisticbike-shareanalysis_17327728755180/Dashboard4)
+
+Currently, annual members account for nearly 30% more of the total rides than casual riders.
 
 **1. How do annual members and casual riders use Cyclistic bikes differently?**
 
 - ***Bike Preferences:*** Both annual member and casual riders prefer classic bikes, but members typically use them for shorter, more utilitarian trips (average ride length: 13 minutes), whereas casual riders often opt for longer rides (28 minutes).
 
 - ***Temporal Patterns:*** 
-  - By Month: Annual members ride consistently year-round, , likely due to daily commuting. Peaks in spring and fall, aligning with back-to-school or work-related activity. Casual riders are more active during summer (May to September) for leisure or tourism, with lower usage in colder months.
+  - By Month: Annual members ride consistently year-round, likely due to daily commuting. Peaks in spring and fall, aligning with back-to-school or work-related activity. Casual riders are more active during summer (May to September) for leisure or tourism, with lower usage in colder months.
 
   - By Day: Annual members have higher ride frequency on weekdays, indicating regular work commutes. Casual riders ride more on weekends, suggesting leisure or recreational use.
 
@@ -124,16 +134,23 @@ Data Visualization: [Tableau](https://public.tableau.com/app/profile/rachelle.la
 
 **2. Why would casual riders buy Cyclistic annual memberships?**
 
-- ***Cost Savings:*** Casual riders who frequently use the same routes (e.g., Streeter Dr & Grand Ave or DuSable Lake Shore Dr & Monroe St) for leisure, can save significantly with membership plans.
+- ***Cost Savings:*** Casual riders who frequently use the same routes (e.g., Streeter Dr & Grand Ave or DuSable Lake Shore Dr & Monroe St) for leisure can save significantly with membership plans. While one-time travelers may not benefit, recurring local leisure riders can take advantage of the cost savings and flexibility offered by annual or monthly memberships.
 
-- ***Convenience:*** Membership could appeal to riders seeking greater flexibility and unlimited access, offering lower costs per ride and making it ideal for those who take multiple rides or enjoy extended leisure trips.
+- ***Convenience:*** Membership could appeal to riders seeking greater flexibility and unlimited access, offering lower costs per ride and making it ideal for those who take multiple rides or enjoy extended leisure trips. Monthly membership options could also attract casual riders who prefer short-term commitments.
 
-- ***Promotions and Benefits:*** Offering incentives like discounts for memberships at high-traffic casual stations or during popular leisure times (e.g., weekends), along with exclusive perks such as priority access to bikes during peak hours, discounted rates for friends and family, or invitations to member-only events, can encourage casual riders to switch to memberships.
+- ***Promotions, Benefits and Incentives:***
+
+  - Offering incentives like discounts for memberships at high-traffic casual stations or during popular leisure times (e.g., weekends) can encourage casual riders to switch to memberships. 
+
+  - Exclusive perks such as priority access to bikes during peak hours, discounted rates for friends and family, or invitations to member-only events add additional value. 
+
+  - Introducing a point-based reward system, where casual riders earn points for each trip they take and redeem them for discounts on memberships, could also motivate frequent casual riders to transition to membership.
+
 
 
 **3. How can Cyclistic use digital media to influence casual riders to become members?**
 
-- ***Targeted Advertising:*** Use geo-targeted ads near high-frequency casual rider stations (e.g., Streeter Dr & Grand Ave) and during popular riding times (weekends or midday hours) to highlight membership benefits like unlimited rides and cost savings.
+- ***Targeted Advertising:*** Use geo-targeted ads near high-frequency casual rider stations (e.g., Streeter Dr & Grand Ave) and during popular riding times (weekends or midday hours) to highlight membership benefits like unlimited rides and cost savings. Ads can also feature specific messages for tourists and occasional riders, promoting short-term memberships or the flexibility of reusing the membership on future visits.
 
 - ***Personalized Offers:*** Leverage ride data to send personalized email or app-based promotions to frequent casual riders, showcasing cost savings and membership perks tailored to their usage patterns.
 
