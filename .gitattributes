@@ -1,0 +1,3 @@
+*.sql text
+*.sql linguist-detectable
+*.sql linguist-language=SQL
